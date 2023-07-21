@@ -6,7 +6,7 @@
 #    By: llion@student.42mulhouse.fr </var/spool/m  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/21 17:45:12 by llion@student     #+#    #+#              #
-#    Updated: 2023/07/21 17:57:15 by llion@student    ###   ########.fr        #
+#    Updated: 2023/07/21 19:00:20 by llion@student    ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,3 +29,18 @@
 - docker exec -ti c1 bash # s'accrocher au processus du container
 - docker volume inspect mynginx # inspecter les meta-donnees (et le point de montage)
 - docker volume rm mynginx # supprimer le volume
+
+# types de volumes
+
+- 3 types : bind, volume, TMPFS
+    - bind : surcharge le volume dans le container (on ne le retrouve pas dans la liste des volumes)
+    - volume : recurpere les donnees dans le container et les ajoute au volume source
+    - TMPFS : environnement ponctuel et ephemere
+
+- docker run -d --name c1 --mount type=bind,source=/data/,destination=/usr/share/nginx/html nginx:latest
+- docker run -d --name c2 --mount type=volume,source=mynginx,destination=/usr/share/nginx/html nginx:latest
+- docker run -d --name c3 --mount type=TMPFS,destination=/usr/share/nginx/html nginx:latest
+
+# build
+
+- docker build -t myimage:v1.0 .
