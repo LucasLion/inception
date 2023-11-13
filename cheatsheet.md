@@ -6,7 +6,7 @@
 #    By: llion@student.42mulhouse.fr </var/spool/m  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/21 17:45:12 by llion@student     #+#    #+#              #
-#    Updated: 2023/07/21 19:00:20 by llion@student    ###   ########.fr        #
+#    Updated: 2023/11/13 21:36:45 by llion@student    ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,3 +44,11 @@
 # build
 
 - docker build -t myimage:v1.0 .
+
+# sources
+
+- https://www.linode.com/docs/guides/how-to-use-dockerfiles/  [simple Dockerfile et comment le monter]
+- https://github.com/axelcoezard/ft_Inception/ [ft_Inception exemple]
+- https://docs.docker.com/reference/ [docker ref]
+- https://nginx.org/en/docs/ [nginx doc]
+- https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-docker/ (nginx dockerfile)
