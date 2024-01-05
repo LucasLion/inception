@@ -19,7 +19,7 @@ RUN	chown -R www-data:www-data /var/www/html
 COPY conf/config.php ./wp-config.php
 COPY conf/script.sh ./
 RUN	chmod +x ./script.sh
-#ENTRYPOINT	["./script.sh"]
-CMD	["bash", "./script.sh"]
+ENTRYPOINT	["bash", "./script.sh"]
+#CMD	["bash", "./script.sh"]
 
 #wp core install --allow-root --path="/var/www/html" -- url=llion.42.fr --title=inception --admin_user=godfather --admin_password=godfather_passwd --admin_email=godfather@42mulhouse.fr --skip-email

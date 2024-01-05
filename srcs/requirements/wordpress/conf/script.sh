@@ -10,6 +10,20 @@ curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.pha
 chmod +x wp-cli.phar
 mv -f wp-cli.phar /usr/local/bin/wp
 
+if [ ! -e "wp-config.php" ]; then
+	wp config create	--allow-root \
+						--dbname="inception" \
+						--dbuser="inception" \
+						--dbpass="inception_passwd" \
+						--dbhost=mariadb:3306 --path='/var/www/wordpress'
+fi
+
+#wp config create	--allow-root \
+#					--dbname=$MARIADB_DATABASE \
+#					--dbuser=$MARIADB_USER \
+#					--dbpass=$MARIADB_PASSWORD \
+#					--dbhost=mariadb:3306 --path='/var/www/wordpress'
+
 /usr/local/bin/wp --info
 /usr/local/bin/wp core download --allow-root --path="/var/www/html"
 
