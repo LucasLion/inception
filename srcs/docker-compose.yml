@@ -28,7 +28,7 @@ services:
     env_file: .env
         
     ports: 
-      - "443:443"
+      - "8888:8888"
     restart: on-failure
 
   wordpress:
@@ -52,13 +52,13 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/Users/llion/data/wordpress'
+      device: '/local-home/llion/data/wordpress'
   mariadb:
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/Users/llion/data/mariadb'
+      device: '/local-home/llion/data/mariadb'
 
 networks:
   inception:
