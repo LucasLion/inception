@@ -52,13 +52,13 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/local-home/llion/data/wordpress'
+      device: '/home/llion/data/wordpress'
   mariadb:
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/local-home/llion/data/mariadb'
+      device: '/home/llion/data/mariadb'
 
 networks:
   inception:
