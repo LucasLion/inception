@@ -1,5 +1,5 @@
 
-version: '3'
+version: '3.9'
 
 services:
   mariadb:
@@ -18,7 +18,7 @@ services:
   nginx:
     container_name: nginx
     volumes:
-      - wordpress:/var/www/wordpress
+      - wordpress:/var/www/html
     networks:
       - inception
     depends_on:
@@ -28,14 +28,14 @@ services:
     env_file: .env
         
     ports: 
-      - "8888:8888"
+      - "443:443"
     restart: on-failure
 
   wordpress:
     container_name: wordpress
     env_file: .env
     volumes:
-      - wordpress:/var/www/wordpress
+      - wordpress:/var/www/html
     networks:
       - inception
     build:
