@@ -10,7 +10,7 @@ FLAGS			=	-f ${COMPOSE_FILE} \
 
 all: build
 
-build: clean
+build: 
 	@sudo mkdir -p ~/data/wordpress ~/data/mariadb
 	@sudo docker compose ${FLAGS} up -d --build
 
@@ -24,11 +24,11 @@ status:
 	@sudo docker compose ${FLAGS} ps
 
 clean:
-	@sudo rm -rf /home/glamazer/data/wordpress/* > /dev/null
-	@sudo rm -rf /home/ghcwlamazer/data/mariadb/* > /dev/null
+	@sudo rm -rf /home/llion/data/wordpress/* > /dev/null
+	@sudo rm -rf /home/llion/data/mariadb/* > /dev/null
 
 fclean: clean
-	@sudo docker system prune
+	@sudo docker system prune -af
 
 re: stop fclean all
 

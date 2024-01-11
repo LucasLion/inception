@@ -7,7 +7,7 @@
 FROM debian:bullseye-slim
 
 RUN apt-get update
-RUN apt-get install -y mariadb-server systemctl
+RUN apt-get install -y mariadb-server
 
 RUN			rm -f	/etc/mysql/my.cnf \
 					/etc/my.cnf \
