@@ -26,6 +26,7 @@ status:
 clean:
 	@sudo rm -rf /home/llion/data/wordpress/* > /dev/null
 	@sudo rm -rf /home/llion/data/mariadb/* > /dev/null
+	@sudo rm -rf /home/llion/data/ > /dev/null
 
 fclean: clean
 	@sudo docker system prune -af
